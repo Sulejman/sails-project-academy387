@@ -45,6 +45,11 @@ module.exports = {
             type: 'string',
             enum: ['Male', 'Female', 'Other'],
             required: true
+      },
+      
+      cars:{
+          collection: 'car',
+          via: 'owner'
       }
   },
   
