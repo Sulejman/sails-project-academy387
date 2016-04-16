@@ -24,13 +24,13 @@ module.exports = {
             transmission: req.body.transmission,
             owner: Number(req.body.owner)
             
-        }).exec(function(err, res) {
+        }).exec(function(err, data) {
             if(err){
                 sails.log.error(err);
-                return err;
+                res.json(err);
             }
             else{
-                return res.ok;
+                res.json(data);
             }
         });
         
@@ -40,11 +40,11 @@ module.exports = {
         Car.find({where: {owner: req.body.owner}}, function (err, data) {
            if(err){
                 sails.log.error(err);
-                return err;
+                res.json(err);
             }
             else{
                 sails.log.info(data);
-                return data;
+                res.json(data);
             } 
         })
     }
