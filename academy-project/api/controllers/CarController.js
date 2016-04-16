@@ -9,22 +9,7 @@ module.exports = {
     
     createCarWithOwner: function(req, res){
         sails.log.info(req.body);
-        //sails.log.info(req.body.seatNumber);
-        //sails.log.info(req.body.engineVolume);
-        //sails.log.info(req.body.owner);
-
-        
-        Car.create({
-            
-            brand: req.body.brand,
-            manufacturer: req.body.manufacturer,
-            color: req.body.color,
-            //seatNumber: parseInt(req.body.seatNumber),
-            //engineVolume: Number(req.body.engineVolume),
-            transmission: req.body.transmission,
-            owner: Number(req.body.owner)
-            
-        }).exec(function(err, data) {
+        Car.create(req.params.all()).exec(function(err, data) {
             if(err){
                 sails.log.error(err);
                 res.json(err);
@@ -33,6 +18,7 @@ module.exports = {
                 res.json(data);
             }
         });
+        res.json(req.body);
         
     },
     

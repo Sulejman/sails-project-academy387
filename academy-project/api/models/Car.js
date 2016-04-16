@@ -21,16 +21,17 @@ module.exports = {
           type: 'string',
           required: true
       },
-      /*seatNumber: {
-          type: 'number',
+      seatNumber: {
+          type: 'string',
           min: 2,
           integer: true,
           required: true
       },
       engineVolume:{
-          type: 'integer',
-          required: true
-      },*/
+          type: 'string',
+          required: true,
+          integer: true
+      },
       transmission:{
           type: 'string', 
           enum: ['Auto', 'Manual'],
