@@ -33,6 +33,35 @@ module.exports = {
                 res.json(data);
             } 
         })
+    },
+    
+    buyCar: function (req, res) {
+        //XOR funkcija unutar if ispod -> samo jedan parametar prolazi 
+        if(( req.param('user_id')  && !req.param('shop_id') ) || ( !req.param('user_id') && req.param('shop_id') )){
+            if(req.param('user_id')){
+                Car.update({id: Number(req.param('car_id'))},{ownerShop: null, ownerUser: req.param('user_id')}).exec(function (err, data) {
+                    if(err){
+                        res.json(err);
+                    }
+                    else{
+                        res.json(data);
+                    }
+                })
+            }
+            else if(req.param('shop_id')){
+                Car.update({id: Number(req.param('car_id'))},{ownerShop: req.param('shop_id'),ownerUser: null}).exec(function (err, data) {
+                    if(err){
+                        res.json(err);
+                    }
+                    else{
+                        res.json(data);
+                    }
+                })
+            }
+        }
+        else{
+                res.json({errorMessage: 'Something is not right.'});
+        }
     }
 	
 };

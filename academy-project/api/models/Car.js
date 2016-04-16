@@ -38,11 +38,13 @@ module.exports = {
           required: true
       },
       
-      owner:{
+      ownerUser:{
           model: 'user'
+      },
+      
+      ownerShop: {
+          model: 'shop'
       }
-      
-      
 
   }
 };

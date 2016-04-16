@@ -49,7 +49,7 @@ module.exports = {
       
       cars:{
           collection: 'car',
-          via: 'owner'
+          via: 'ownerUser'
       }
   },
   
