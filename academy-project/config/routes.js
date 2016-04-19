@@ -46,6 +46,10 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   
-  'POST /car/create' : 'CarController.createCarWithOwner'
+  'POST /car/create' : 'CarController.createCarWithOwner',
+  'GET  /car/user' : 'CarController.getCarsFromUser',
+  'PUT /car/buy' : 'CarController.buyCar',
+  'PUT /car/rent' : 'CarController.rentCar',
+  'PUT /car/return' : 'CarController.returnCar'
 
 };
