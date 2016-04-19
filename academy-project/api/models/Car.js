@@ -37,7 +37,10 @@ module.exports = {
           enum: ['Auto', 'Manual'],
           required: true
       },
-      
+      rented: {
+          type: 'string', 
+          integer: true
+      },
       ownerUser:{
           model: 'user'
       },
