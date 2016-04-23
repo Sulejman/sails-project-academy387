@@ -50,6 +50,10 @@ module.exports = {
       cars:{
           collection: 'car',
           via: 'ownerUser'
+      },
+      balance: {
+          collection: 'balance',
+          via: 'userOwner'
       }
   },
   

@@ -14,8 +14,15 @@ module.exports = {
           required: true
       },
       manufacturer: {
+          type: 'string'
+      },
+      sellingPrice: {
           type: 'string',
-          required: true
+          integer: true 
+      },
+      rentPrice: {
+          type: 'string',
+          decimal: true 
       },
       color: {
           type: 'string',
