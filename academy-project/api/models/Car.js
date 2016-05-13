@@ -36,7 +36,6 @@ module.exports = {
       },
       imageUrl:{
           type: 'string',
-          urlish: true
       },
       engineVolume:{
           type: 'string',

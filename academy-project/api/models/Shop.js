@@ -25,6 +25,11 @@ module.exports = {
         balance: {
             collection: 'balance',
             via: 'shopOwner'
+        },
+        
+        logoUrl:{
+            type: 'string',
+            defaultsTo: "http://northmiamiautorepair.com/wp-content/uploads/2014/05/Car-Repair-north-miami.png"
         }
 
     }
